@@ -6,7 +6,7 @@ screen = pygame.display.set_mode((800, 800))
 RED = pygame.Color(240, 30, 40)
 BLUE = pygame.Color(0, 160, 230)
 GREEN = pygame.Color(30, 170, 70)
-grey = pygame.Color(160, 160, 160)
+GREY = pygame.Color(160, 160, 160)
 
 #Fonction créatrice de la tête du Snake
 def drawSnakeHead(screen, x, y, orientation):
@@ -37,7 +37,7 @@ def drawSnakeCorpse(screen, x, y):
 
 
 #Fonction créatrice de la queue du Snake
-def drawSnakeTail(screen, x, y, orientation):
+#def drawSnakeTail(screen, x, y, orientation):
 
 
 #Fonction créatrice de la cible
@@ -53,14 +53,7 @@ def drawTarget(screen, x, y):
 
 #Fonction destructrice du Snake
 def drawErase(screen, x, y):
-    pygame.draw.rect(screen, GREY, [(x, y), (25, 25)])
+    pygame.draw.rect(screen, GREY, [(x-1, y-1), (27, 27)])
 
     #Raffraichis l'écran
     pygame.display.update()
-
-while True:
-    drawSnake(screen, 300, 300, 3)
-
-
-    
-    
