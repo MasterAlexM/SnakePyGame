@@ -1,14 +1,14 @@
-#Importation        -------
+#Importation
 import pygame
 import Difficulties
-import DrawSnake
 
-#init color         -------
-WHITE   = pygame.Color(255, 255, 255)
-GREY    = pygame.Color(160,160,160)
-GREYY   = pygame.Color(100,100,100)
-BLUE    = pygame.Color(0,0,255)
-#Initialisation     -------
+#Initialisaiton des couleurs
+WHITE  = pygame.Color(255, 255, 255)
+GREY   = pygame.Color(160,160,160)
+GREYY  = pygame.Color(100,100,100)
+BLUE   = pygame.Color(0,0,255)
+
+#Initialisation de l'écran de jeu
 pygame.init()
 screenSize = 800
 screen  = pygame.display.set_mode((screenSize,screenSize))#init display a 800x800
@@ -18,7 +18,7 @@ border = 50
 mazeSize = screenSize-border*2
 pygame.draw.rect(screen,GREY,(border,border,mazeSize,mazeSize))
 
-#init snakeBase & direction
+#Initialisation des principales variables du Snake
 up      = 0
 right   = 1
 dn      = 2
@@ -30,8 +30,7 @@ direction = right
 running = True
 waze = Difficulties.difficulties("easy")
 
-
-#init des ligne et colonne
+#Création de la grille de jeu
 for i in range(20):
     for y in range(20):
         pygame.draw.rect(screen,GREY,(border,border,mazeSize,mazeSize))
@@ -43,22 +42,31 @@ for i in range(21):
 pygame.display.update()
 keys = []
 while running:
-    pygame.time.delay(300)#Delay du jeu pour l'affichage
-    for event in pygame.event.get():#lecture des evenement
+    #Délai du jeu pour l'affichage
+    pygame.time.delay(300)
+    #Lecture des évènements
+    for event in pygame.event.get():
+        #Exit
         if event.type == pygame.QUIT:#Exit
             running = False
-        if event.type == pygame.KEYDOWN:#si une touche est appuyer
+        #Si une touche est appuyé
+        if event.type == pygame.KEYDOWN:
             keys = pygame.key.get_pressed()
-            if keys[pygame.K_LEFT]:#fleche de gauche
+            #Flèche de gauche
+            if keys[pygame.K_LEFT]:
                 direction = left
-            elif keys[pygame.K_RIGHT]:#fleche de droite
+            #Flèche de droite
+            elif keys[pygame.K_RIGHT]:
                 direction = right
-            elif keys[pygame.K_UP]:#fleche de haut
+            #Flèche du haut
+            elif keys[pygame.K_UP]:
                 direction = up
-            elif keys[pygame.K_DOWN]:#fleche de bas
+            #Flèche du bas
+            elif keys[pygame.K_DOWN]:
                 direction = dn
 
-    if(direction == right):#on tourne a droite
+    #On tourne a droite
+    if(direction == right):
         for i in range(len(Snake)):
             if(i==0):
                 DrawSnake.drawErase(screen,border + 5 + 35 * Snake[i][0], border + 5 + 35 * Snake[i][1])
@@ -69,7 +77,8 @@ while running:
                 Snake[i] = Snake[0]
                 Snake[i][0] -= 1
                 DrawSnake.drawSnakeCorpse(screen,border+5 + 35 * Snake[i][0],border + 5 + 35 * Snake[i][1])
-    elif(direction == left):#on tourne a gauche
+    #On tourne a gauche
+    elif(direction == left):
         for i in range(len(Snake)):
             if(i==0):
                 DrawSnake.drawErase(screen,border + 5 + 35 * Snake[i][0], border + 5 + 35 * Snake[i][1])
@@ -80,7 +89,8 @@ while running:
                 Snake[i] = Snake[0]
                 Snake[i][0] += 1
                 DrawSnake.drawSnakeCorpse(screen,border+5 + 35 * Snake[i][0],border + 5 + 35 * Snake[i][1])
-    elif(direction == up):#on tourne en haut
+    #On tourne en haut
+    elif(direction == up):
         for i in range(len(Snake)):
             if(i==0):
                 DrawSnake.drawErase(screen,border + 5 + 35 * Snake[i][0], border + 5 + 35 * Snake[i][1])
@@ -91,7 +101,8 @@ while running:
                 Snake[i] = Snake[0]
                 Snake[i][1] += 1
                 DrawSnake.drawSnakeCorpse(screen,border+5 + 35 * Snake[i][0],border + 5 + 35 * Snake[i][1])
-    elif(direction == dn):#on tourne en bas
+    #On tourne en bas
+    elif(direction == dn):
         for i in range(len(Snake)):
             if(i==0):
                 DrawSnake.drawErase(screen,border + 5 + 35 * Snake[i][0], border + 5 + 35 * Snake[i][1])
@@ -103,12 +114,6 @@ while running:
                 Snake[i][1] -= 1
                 DrawSnake.drawSnakeCorpse(screen,border+5 + 35 * Snake[i][0],border + 5 + 35 * Snake[i][1])
 
-
         #if evenement.type == pygame.KEYDOWN:
 
-        
-
-
-
 pygame.quit()#on quitte le programme
-
