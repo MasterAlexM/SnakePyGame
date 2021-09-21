@@ -76,7 +76,3 @@ def drawErase(screen, x, y):
 
     #Rafraîchit l'écran
     pygame.display.update()
-
-
-    
-    
