@@ -1,11 +1,11 @@
 #Importation
 import pygame
 
-#Initialisation des variables
-RED = pygame.Color(240, 30, 40)
-BLUE = pygame.Color(0, 160, 230)
-GREEN = pygame.Color(30, 170, 70)
-GREY = pygame.Color(160, 160, 160)
+#Initialisation des couleurs
+RED    = pygame.Color(240, 30, 40)
+BLUE   = pygame.Color(0, 160, 230)
+GREEN  = pygame.Color(30, 170, 70)
+GREY   = pygame.Color(160, 160, 160)
 
 #Fonction créatrice de la tête du Snake
 def drawSnakeHead(screen, x, y, orientation):
