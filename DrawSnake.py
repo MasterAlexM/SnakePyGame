@@ -1,7 +1,7 @@
 #Importation
 import pygame
 
-#Initialisation des variables
+#Initialisation des couleurs
 RED = pygame.Color(240, 30, 40)
 BLUE = pygame.Color(0, 160, 230)
 GREEN = pygame.Color(30, 170, 70)
