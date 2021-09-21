@@ -1,13 +1,14 @@
-#Importation        -------
+#Importation
 import pygame
 import Difficulties
 
-#init color         -------
-WHITE   = pygame.Color(255, 255, 255)
-GREY    = pygame.Color(160,160,160)
-GREYY   = pygame.Color(100,100,100)
-BLUE    = pygame.Color(0,0,255)
-#Initialisation     -------
+#Initialisaiton des couleurs
+WHITE  = pygame.Color(255, 255, 255)
+GREY   = pygame.Color(160,160,160)
+GREYY  = pygame.Color(100,100,100)
+BLUE   = pygame.Color(0,0,255)
+
+#Initialisation de l'écran de jeu
 pygame.init()
 screenSize = 800
 screen  = pygame.display.set_mode((screenSize,screenSize))#init display a 800x800
@@ -17,7 +18,7 @@ border = 50
 mazeSize = screenSize-border*2
 pygame.draw.rect(screen,GREY,(border,border,mazeSize,mazeSize))
 
-#init snakeBase & direction
+#Initialisation des principales variables du Snake
 up      = 0
 right   = 1
 dn      = 2
@@ -25,11 +26,10 @@ left    = 3
 Snake = [[2,0],[1,0],[0,0]]
 direction = right
 
-
 running = True
 waze = Difficulties.difficulties("easy")
 
-
+#Création de la grille de jeu
 for i in range(20):
     for y in range(20):
         pygame.draw.rect(screen,GREY,(border,border,mazeSize,mazeSize))
