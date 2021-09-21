@@ -39,7 +39,7 @@ def drawSnakeCorpse(screen, x, y):
 
 
 #Fonction créatrice de la queue du Snake
-#def drawSnakeTail(screen, x, y, orientation):
+def drawSnakeTail(screen, x, y, orientation):
 
     #Dessine la queue du serpent en fonction de son orientation
     #Nord
