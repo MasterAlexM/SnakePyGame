@@ -1,10 +1,12 @@
+#Importation
 import random2
 
+#Initialisation des variables
 easy = []
 medium = []
 hard = []
 
-#Fonction de sélection de difficulté et initialisation du niveau
+#Initialisation du niveau en fonction de la difficultée choisie
 def difficulties(difficulty):
     
     #Difficultée facile
