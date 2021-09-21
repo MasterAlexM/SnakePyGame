@@ -1,4 +1,3 @@
-import pygame
 import random2
 
 easy = []
