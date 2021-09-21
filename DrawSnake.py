@@ -2,10 +2,10 @@
 import pygame
 
 #Initialisation des couleurs
-RED = pygame.Color(240, 30, 40)
-BLUE = pygame.Color(0, 160, 230)
-GREEN = pygame.Color(30, 170, 70)
-GREY = pygame.Color(160, 160, 160)
+RED    = pygame.Color(240, 30, 40)
+BLUE   = pygame.Color(0, 160, 230)
+GREEN  = pygame.Color(30, 170, 70)
+GREY   = pygame.Color(160, 160, 160)
 
 #Fonction créatrice de la tête du Snake
 def drawSnakeHead(screen, x, y, orientation):
@@ -23,7 +23,7 @@ def drawSnakeHead(screen, x, y, orientation):
     #Ouest
     elif(orientation == 3):
         pygame.draw.polygon(screen, GREEN, [(x, y+12.5), (x+25, y), (x+25, y+25)])
-        
+
     #Rafraîchit l'écran
     pygame.display.update()
 
@@ -76,7 +76,3 @@ def drawErase(screen, x, y):
 
     #Rafraîchit l'écran
     pygame.display.update()
-
-
-    
-    
